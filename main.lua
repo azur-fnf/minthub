@@ -1,4 +1,6 @@
 local placeId = game.PlaceId
+local placeName = game:GetService("MarketplaceService"):GetProductInfo(placeId).Name
+local StarterGui = game:GetService("StarterGui")
 
 local places = {
     [7205641391] = function()
@@ -6,16 +8,22 @@ local places = {
     end,
 
     [1234567890] = function()
-        print("oi estou em outro mapa")
+        print("Hi, I am in another map")
     end
 }
 
 if places[placeId] then
     places[placeId]()
+
+    StarterGui:SetCore("SendNotification", {
+        Title = "Game Detected",
+        Text = "Script successfully executed for '" .. placeName .. "'.",
+        Duration = 6
+    })
 else
     StarterGui:SetCore("SendNotification", {
-        Title = "Jogo não suportado",
-        Text = "O jogo '" .. placeName .. "' não é suportado por este script.",
+        Title = "Unsupported Game",
+        Text = "The game '" .. placeName .. "' is not supported by this script.",
         Duration = 6
     })
 end
