@@ -4,7 +4,7 @@ local StarterGui = game:GetService("StarterGui")
 
 local places = {
     [7205641391] = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/azur-fnf/minthub/refs/heads/main/mondaymorningmisery/script.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/azuriondeve/minthub/refs/heads/main/mondaymorningmisery/script.lua"))()
     end,
 
     [1234567890] = function()
